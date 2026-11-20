@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Tarik Ed-Darham, twórca wideo AI i social media manager we Wrocławiu. Reklamy AI, UGC, rolki i posty do social mediów na Meta, TikToka i Instagram.">
+<title>Tarik · Portfolio: wideo AI i social media</title>
+<meta property="og:title" content="Tarik · Wideo AI i social media">
+<meta property="og:description" content="Reklamy AI, UGC, rolki i posty. Szukam pracy jako social media manager we Wrocławiu lub zdalnie.">
+<meta property="og:image" content="https://tarik-derhem.vercel.app/kitchen.jpg">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="en" href="https://tarik-derhem.vercel.app/">
+<link rel="alternate" hreflang="pl" href="https://tarik-derhem.vercel.app/pl.html">
+<meta name="theme-color" content="#0E0F11">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230E0F11'/%3E%3Ctext x='16' y='23' font-family='Arial Black,Arial' font-weight='900' font-size='20' text-anchor='middle' fill='%23D9B36C'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Dark contact-sheet portfolio: big name beside a portrait, then the work as a strip of vertical frames with mono labels. */
+:root{
+  --bg:#0E0F11; --surface:#16181B; --ink:#EDEBE6; --muted:#9A968E; --line:#2A2C30; --accent:#D9B36C; --accent-soft:#2A2418;
+  --display:"Syne","Arial Black",system-ui,sans-serif;
+  --body:"Manrope","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:auto}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1120px;margin:0 auto}
+a{color:var(--accent);text-underline-offset:3px}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05}
+h2{font-size:clamp(28px,4vw,40px);font-weight:700}
+h3{font-size:19px;font-weight:700;line-height:1.25}
+p{margin:0}
+
+/* Top bar */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px;border-bottom:1px solid var(--line)}
+.top nav{display:flex;gap:8px;flex-wrap:wrap}
+.top nav a{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.top nav a:hover{color:var(--ink)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr);gap:clamp(24px,5vw,64px);align-items:end;padding-block:clamp(40px,7vw,88px) 48px;border-bottom:1px solid var(--line)}
+.hero .name{font-size:clamp(68px,14vw,176px);font-weight:800;letter-spacing:-.03em;line-height:.86}
+.hero .role{font-family:var(--display);font-weight:600;font-size:clamp(21px,2.7vw,30px);margin-top:22px;max-width:24ch;line-height:1.2}
+.hero .role em{font-style:normal;color:var(--accent)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px}
+.hero .meta span{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.hero .meta span::before{content:"● ";color:var(--accent)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:13px 18px;border:1px solid var(--accent);color:var(--bg);background:var(--accent)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.photo{margin:0;max-width:100%}
+.photo img{display:block;width:100%;height:auto;aspect-ratio:460/552;object-fit:cover;filter:grayscale(1) contrast(1.06)}
+.photo figcaption{display:flex;justify-content:space-between;margin-top:8px}
+
+/* Sections */
+section{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px 48px;padding-block:56px;border-bottom:1px solid var(--line)}
+section > header{display:flex;flex-direction:column;gap:8px}
+section > header p{color:var(--muted);font-size:15px;max-width:26ch}
+
+/* Work strip */
+.reel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.frame{margin:0;min-width:0;display:flex;flex-direction:column;gap:12px}
+.frame .shot{position:relative;background:#000;border:1px solid var(--line)}
+.frame video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;background:#000}
+.frame .num{position:absolute;top:10px;left:10px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink);background:rgba(14,15,17,.72);padding:3px 7px;pointer-events:none}
+.frame h3{margin-top:2px}
+.frame .tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.frame dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;font-size:14px}
+.frame dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.frame dd{margin:0;color:var(--ink)}
+
+.wide{grid-column:1/-1;margin:16px 0 0}
+.wide .shot{background:#000;border:1px solid var(--line)}
+.wide video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+.wide .cap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:8px 32px;margin-top:14px}
+.wide .cap p{color:var(--muted);font-size:15px}
+
+.ugc{display:grid;grid-template-columns:repeat(2,minmax(0,240px));gap:20px}
+.ugc .note{grid-column:1/-1;color:var(--muted);font-size:15px;max-width:60ch}
+
+/* Open-to-work line */
+.open{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:9px 14px;border:1px solid var(--accent);background:var(--accent-soft);font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.open::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+
+/* Social media design */
+.posts{display:grid;grid-template-columns:repeat(2,minmax(0,300px));gap:20px}
+.posts figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:10px}
+.posts img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border:1px solid var(--line)}
+.posts .note{grid-column:1/-1;color:var(--muted);font-size:15px;max-width:60ch}
+
+/* Services */
+.offer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.svc{background:var(--surface);border:1px solid var(--line);padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.svc p{color:var(--muted);font-size:15px}
+.svc .for{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-top:auto;padding-top:6px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:30px}
+.facts div{background:var(--bg);padding:16px 18px;min-width:0}
+.facts b{display:block;font-family:var(--display);font-size:20px;font-weight:700;line-height:1.2}
+.facts span{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:s}
+.step{background:var(--surface);border:1px solid var(--line);padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--mono);font-size:12px;color:var(--accent)}
+.step p{color:var(--muted);font-size:15px}
+
+/* Lists and chips */
+.list{display:flex;flex-direction:column}
+.item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 24px;padding-block:18px;border-top:1px solid var(--line)}
+.item:first-child{border-top:0;padding-top:0}
+.item .where{color:var(--muted);font-size:15px}
+.item .when{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:right;white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--line);background:var(--surface);padding:9px 13px;font-size:15px}
+.chip b{font-weight:600}
+.chip small{font-family:var(--mono);font-size:11px;color:var(--accent);margin-left:6px}
+.stack{display:flex;flex-direction:column;gap:20px}
+
+/* Footer */
+footer{padding-block:64px 80px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;align-items:end}
+footer .big{font-family:var(--display);font-size:clamp(30px,5.2vw,52px);font-weight:700;max-width:16ch;line-height:1.05}
+footer .big span{color:var(--accent)}
+footer .contact{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+footer .contact .btn{text-transform:none;letter-spacing:.02em}
+
+/* Every clickable thing gets a visible layer */
+.top{position:sticky;top:0;z-index:20;background:rgba(14,15,17,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.top .brand{flex:1;min-width:0}
+.top nav a{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 11px;transition:border-color .15s,color .15s}
+.top nav a:hover{border-color:var(--accent);color:var(--accent)}
+.lang{display:inline-flex;flex:none;border:1px solid var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.lang a{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;padding:8px 13px;text-decoration:none;color:var(--accent);background:var(--accent-soft)}
+.lang a[aria-current]{background:var(--accent);color:var(--bg)}
+.lang a:not([aria-current]):hover{background:var(--accent);color:var(--bg)}
+.btn{transition:filter .15s,border-color .15s,color .15s}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:var(--surface);border-color:var(--muted)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent);filter:none}
+p a,.where a{display:inline-block;padding:1px 8px;border:1px solid var(--accent);background:var(--accent-soft);text-decoration:none;line-height:1.5}
+p a:hover,.where a:hover{background:var(--accent);color:var(--bg)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .photo{max-width:360px}
+  section{grid-template-columns:1fr;gap:22px}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .wide .cap{grid-template-columns:1fr}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .reel{grid-template-columns:1fr;gap:36px}
+  .frame .shot{max-width:340px}
+  .ugc{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .posts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:1fr}
+  .offer{grid-template-columns:1fr}
+  .top{flex-wrap:wrap;padding-block:12px;gap:10px}
+  .top nav{order:3;width:100%;flex-wrap:nowrap;overflow-x:auto;gap:8px;padding-bottom:2px}
+  .top nav a{white-space:nowrap}
+}
+@media (max-width:480px){
+  .item{grid-template-columns:1fr}
+  .item .when{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <span class="label brand">Tarik Ed-Darham · wideo AI i social media</span>
+    <nav aria-label="Sekcje">
+      <a href="#work">Realizacje</a><a href="#social">Social media</a><a href="#services">Usługi</a><a href="#process">Proces</a><a href="#contact">Kontakt</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Język">
+      <a href="index.html" hreflang="en" lang="en">EN · English</a><a href="pl.html" hreflang="pl" lang="pl" aria-current="page">PL</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div>
+      <div class="label">Portfolio: wideo AI i social media · 2026</div>
+      <h1 class="name">Tarik</h1>
+      <p class="role">Twórca wideo AI i <em>social media manager</em>. Rolki, UGC, posty i reklamy, które zatrzymują scrollowanie.</p>
+      <p class="open">Szukam pracy jako social media manager · Wrocław i zdalnie</p>
+      <div class="meta">
+        <span>Wrocław · praca zdalna</span>
+        <span>Meta · TikTok · Reels</span>
+        <span>Dostępny o każdej porze</span>
+        <span>Uczę się polskiego · EN · FR · AR</span>
+      </div>
+      <div class="cta">
+        <a class="btn" href="#work">Zobacz realizacje</a>
+        <a class="btn ghost" href="mailto:tarikderhem@gmail.com">Napisz do mnie</a>
+      </div>
+    </div>
+    <figure class="photo">
+      <img src="portrait.jpg" alt="Portret Tarika" width="460" height="552">
+      <figcaption><span class="label">Tarik</span><span class="label">Wrocław</span></figcaption>
+    </figure>
+  </div>
+
+  <section id="work">
+    <header>
+      <span class="label">Wybrane prace</span>
+      <h2>Realizacje</h2>
+      <p>Każdy projekt od A do Z: koncepcja, prompty, generowanie i montaż.</p>
+    </header>
+    <div class="reel">
+
+      <figure class="frame">
+        <div class="shot">
+          <video autoplay muted loop playsinline controls preload="auto" poster="kitchen.jpg" aria-label="Kitchen Confession, Polish dialogue scene">
+            <source src="kitchen.mp4" type="video/mp4">
+          </video>
+          <span class="num">01</span>
+        </div>
+        <span class="tag">Realistyczni ludzie AI · lip-sync</span>
+        <h3>Kitchen Confession</h3>
+        <dl>
+          <dt>Brief</dt><dd>Scena dramatyczna dwóch osób po polsku</dd>
+          <dt>Cel</dt><dd>Wiarygodni ludzie i prawdziwe emocje</dd>
+          <dt>Narzędzia</dt><dd>Nano Banana Pro, ElevenLabs v4, Higgsfield Intone, CapCut</dd>
+          <dt>Rola</dt><dd>Scenariusz, casting, głosy, generowanie, montaż</dd>
+        </dl>
+      </figure>
+
+      <figure class="frame">
+        <div class="shot">
+          <video autoplay muted loop playsinline controls preload="auto" aria-label="Dewly serum, luxury product spot">
+            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3FpNaxtqHwsAZqdvTACETDBxx2x/hf_20261103_110238_38a349ac-9461-4fbf-8cec-133fc395ace2.mp4#t=0.5" type="video/mp4">
+          </video>
+          <span class="num">02</span>
+        </div>
+        <span class="tag">Produkt · reklama koncepcyjna</span>
+        <h3>Dewly Serum</h3>
+        <dl>
+          <dt>Brief</dt><dd>Luksusowa prezentacja wymyślonej marki kosmetycznej</dd>
+          <dt>Cel</dt><dd>Wizerunek marki premium</dd>
+          <dt>Narzędzia</dt><dd>Nano Banana Pro, Seedance 2.5, CapCut</dd>
+          <dt>Rola</dt><dd>Koncepcja marki, kierunek artystyczny, prompty, montaż</dd>
+        </dl>
+      </figure>
+
+      <figure class="frame">
+        <div class="shot">
+          <video autoplay muted loop playsinline controls preload="auto" poster="streetwear.jpg" aria-label="Streetwear lookbook, fashion editorial">
+            <source src="streetwear.mp4" type="video/mp4">
+          </video>
+          <span class="num">03</span>
+        </div>
+        <span class="tag">Moda · reklama koncepcyjna</span>
+        <h3>Streetwear Lookbook</h3>
+        <dl>
+          <dt>Brief</dt><dd>Jedna spójna postać w wielu ujęciach</dd>
+          <dt>Cel</dt><dd>Treści modowe skupione na produkcie</dd>
+          <dt>Narzędzia</dt><dd>Nano Banana Pro, Seedance 2.5, CapCut</dd>
+          <dt>Rola</dt><dd>Stylizacja, plan ujęć, prompty, montaż</dd>
+        </dl>
+      </figure>
+
+      <figure class="wide">
+        <div class="shot">
+          <video controls playsinline preload="metadata" poster="villa-poster.jpg" aria-label="AI cinematic villa film">
+            <source src="villa.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="cap">
+          <div>
+            <span class="label">04 · Projekt dla klienta · 30 s</span>
+            <h3 style="margin-top:6px">Film o luksusowej willi</h3>
+          </div>
+          <p>Filmowa prezentacja willi na wynajem w Agadirze i Taghazout, stworzona w całości ze zdjęć willi. Bez kamery i bez ekipy. Cel: więcej rezerwacji z Instagram Reels i strony oferty. Narzędzia: Higgsfield, Kling, CapCut.</p>
+        </div>
+      </figure>
+
+    </div>
+  </section>
+
+  <section id="ugc">
+    <header>
+      <span class="label">Dla klientów</span>
+      <h2>Reklamy UGC</h2>
+      <p>Reklamy w stylu opinii klientów z twórcami AI.</p>
+    </header>
+    <div class="ugc">
+      <figure class="frame">
+        <div class="shot"><video autoplay muted loop playsinline controls preload="auto" poster="ugc1.jpg" aria-label="AI UGC ad preview for a serum"><source src="ugc1.mp4" type="video/mp4"></video></div>
+        <span class="label">Reklama serum · selfie w domu</span>
+      </figure>
+      <figure class="frame">
+        <div class="shot"><video autoplay muted loop playsinline controls preload="auto" poster="ugc2.jpg" aria-label="AI UGC ad preview for an anti-aging cream"><source src="ugc2.mp4" type="video/mp4"></video></div>
+        <span class="label">Reklama kremu · w sklepie</span>
+      </figure>
+      <p class="note">Reklamy kosmetyków na rynek marokański, ze scenariuszem i lektorem w darija. Tu tylko krótkie fragmenty; pełne wersje pozostają prywatne zgodnie z umowami z klientami.</p>
+    </div>
+  </section>
+
+  <section id="social">
+    <header>
+      <span class="label">Social media</span>
+      <h2>Projekty postów</h2>
+      <p>Posty na Instagram, które zaprojektowałem dla AIESEC in Agadir.</p>
+    </header>
+    <div class="posts">
+      <figure>
+        <img src="aiesec1.jpg" alt="Instagram post: OC Recruitment Team announcement, purple collage with Moroccan landmarks" width="640" height="640" loading="lazy">
+        <span class="label">Ogłoszenie zespołu rekrutacyjnego · 150+ polubień</span>
+      </figure>
+      <figure>
+        <img src="aiesec2.jpg" alt="Instagram post: member testimonial quote card with portrait" width="640" height="640" loading="lazy">
+        <span class="label">Seria historii członków · karta z cytatem</span>
+      </figure>
+      <p class="note">Jako Marketing Team Leader w AIESEC in Agadir planowałem i projektowałem Instagram oddziału w Canvie: ogłoszenia, kampanie rekrutacyjne i serie historii członków, w spójnym stylu wizualnym. Zobacz konto: <a href="https://www.instagram.com/gadirians/" target="_blank" rel="noopener">@gadirians</a>.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <header>
+      <span class="label">Co oferuję</span>
+      <h2>Usługi</h2>
+      <p>Dla marek, które co tydzień potrzebują świeżych treści i stałej obecności w social mediach.</p>
+    </header>
+    <div>
+      <div class="offer">
+        <article class="svc"><h3>Prowadzenie social mediów</h3><p>Kalendarz treści, publikacje, opisy i odpowiedzi dla społeczności na Instagramie, TikToku i Facebooku, z miesięcznymi statystykami, żeby wiedzieć, co działa.</p><span class="for">Instagram · TikTok · Facebook</span></article>
+        <article class="svc"><h3>Projekty postów i karuzel</h3><p>Posty, karuzele i relacje zgodne z marką, projektowane w Canvie: od ogłoszeń po serie kampanii.</p><span class="for">Canva · spójność marki</span></article>
+        <article class="svc"><h3>Reklamy AI UGC i opinie</h3><p>Realistyczni twórcy mówiący do kamery z naturalnym lip-sync, w dowolnym języku. Hook, problem, produkt, efekt, wezwanie do działania.</p><span class="for">Uroda · pielęgnacja · wellness</span></article>
+        <article class="svc"><h3>Filmowe spoty produktowe</h3><p>Światło, faktura i powolne ruchy kamery, dzięki którym produkt wygląda jak premium, z jednego packshotu.</p><span class="for">Biżuteria · wnętrza · kosmetyki</span></article>
+        <article class="svc"><h3>Moda i lookbooki</h3><p>Jedna spójna postać w różnych stylizacjach i ujęciach, dynamicznie zmontowana pod Reels i TikToka.</p><span class="for">Odzież · streetwear · akcesoria</span></article>
+        <article class="svc"><h3>Warianty hooków i formaty</h3><p>Kilka wersji otwarcia każdego konceptu do testów, w formatach 9:16, 4:5 i 1:1 z napisami.</p><span class="for">Testy kreacji · zmęczenie reklamą</span></article>
+      </div>
+      <div class="facts">
+        <div><b>Każdy język</b><span>Wideo i głos AI na cały świat</span></div>
+        <div><b>Mówię w 4</b><span>EN · FR · AR · Darija</span></div>
+        <div><b>O każdej porze</b><span>Elastycznie, szybkie odpowiedzi</span></div>
+        <div><b>Płatny test</b><span>Chętnie od niego zacznę</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <header>
+      <span class="label">Jak pracuję</span>
+      <h2>Proces</h2>
+    </header>
+    <div class="steps">
+      <div class="step"><h3>Najpierw hook</h3><p>Każda reklama zaczyna się od pierwszych 3 sekund: co zatrzyma scrollowanie tej grupy odbiorców.</p></div>
+      <div class="step"><h3>Postacie i referencje</h3><p>Postacie i produkty zapisane jako obrazy referencyjne, żeby twarze i etykiety były zawsze spójne.</p></div>
+      <div class="step"><h3>Mądre generowanie</h3><p>Właściwy model do każdego ujęcia: Veo lub Intone do mówienia, Seedance do produktu i ruchu.</p></div>
+      <div class="step"><h3>Montaż i warianty</h3><p>Montaż pod utrzymanie uwagi, napisy i warianty hooków gotowe do testów.</p></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <header>
+      <span class="label">Umiejętności</span>
+      <h2>Narzędzia i języki</h2>
+    </header>
+    <div class="stack">
+      <div class="chips">
+        <span class="chip">Higgsfield</span><span class="chip">Seedance 2.5</span><span class="chip">Veo 3.1</span><span class="chip">Kling</span><span class="chip">Nano Banana Pro</span><span class="chip">Intone</span><span class="chip">ElevenLabs</span><span class="chip">CapCut</span><span class="chip">Canva</span>
+      </div>
+      <div class="chips">
+        <span class="chip"><b>Angielski</b><small>C1</small></span>
+        <span class="chip"><b>Francuski</b><small>B1</small></span>
+        <span class="chip"><b>Arabski</b><small>Ojczysty</small></span>
+        <span class="chip"><b>Darija</b><small>Ojczysty</small></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <header>
+      <span class="label">O mnie</span>
+      <h2>Doświadczenie</h2>
+    </header>
+    <div class="list">
+      <div class="item"><h3>Twórca wideo AI (freelance)</h3><span class="when">Freelance</span><p class="where">Luksusowe wille, Agadir i Taghazout · reklamy UGC dla marek kosmetycznych</p></div>
+      <div class="item"><h3>Marketing Team Leader</h3><span class="when">Wolontariat</span><p class="where">AIESEC in Agadir · treści i projekty postów na Instagram · <a href="https://www.instagram.com/gadirians/" target="_blank" rel="noopener">@gadirians</a></p></div>
+      <div class="item"><h3>Animator, DJ i tancerz</h3><span class="when">Występy</span><p class="where">Hotele RIU i eventy · lata występów przed międzynarodową publicznością</p></div>
+      <div class="item"><h3>Studia magisterskie: Communication Management</h3><span class="when">2026 – obecnie</span><p class="where">Uniwersytet Wrocławski · licencjat z filologii angielskiej, Ibn Zohr University</p></div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p class="big">Reklamy i posty, które <span>zatrzymują scrollowanie.</span></p>
+    <div class="contact">
+      <a class="btn" href="mailto:tarikderhem@gmail.com">✉ tarikderhem@gmail.com</a>
+      <a class="btn ghost" href="tel:+48600744068">☎ +48 600 744 068</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/tarik-derhem-b24890219/" target="_blank" rel="noopener">LinkedIn →</a>
+      <span class="label">Wrocław · zdalnie, każda strefa czasowa</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -9,6 +9,8 @@
 <meta property="og:description" content="AI ads, UGC, reels and social media posts. Open to social media management roles in Wrocław and remote.">
 <meta property="og:image" content="https://tarik-derhem.vercel.app/kitchen.jpg">
 <meta property="og:type" content="website">
+<link rel="alternate" hreflang="en" href="https://tarik-derhem.vercel.app/">
+<link rel="alternate" hreflang="pl" href="https://tarik-derhem.vercel.app/pl.html">
 <meta name="theme-color" content="#0E0F11">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230E0F11'/%3E%3Ctext x='16' y='23' font-family='Arial Black,Arial' font-weight='900' font-size='20' text-anchor='middle' fill='%23D9B36C'%3ET%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +39,7 @@ p{margin:0}
 
 /* Top bar */
 .top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px;border-bottom:1px solid var(--line)}
-.top nav{display:flex;gap:18px;flex-wrap:wrap}
+.top nav{display:flex;gap:8px;flex-wrap:wrap}
 .top nav a{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none}
 .top nav a:hover{color:var(--ink)}
 
@@ -124,8 +126,25 @@ section > header p{color:var(--muted);font-size:15px;max-width:26ch}
 footer{padding-block:64px 80px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;align-items:end}
 footer .big{font-family:var(--display);font-size:clamp(30px,5.2vw,52px);font-weight:700;max-width:16ch;line-height:1.05}
 footer .big span{color:var(--accent)}
-footer .contact{font-family:var(--mono);font-size:13px;line-height:2}
-footer .contact a{color:var(--ink)}
+footer .contact{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+footer .contact .btn{text-transform:none;letter-spacing:.02em}
+
+/* Every clickable thing gets a visible layer */
+.top{position:sticky;top:0;z-index:20;background:rgba(14,15,17,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.top .brand{flex:1;min-width:0}
+.top nav a{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 11px;transition:border-color .15s,color .15s}
+.top nav a:hover{border-color:var(--accent);color:var(--accent)}
+.lang{display:inline-flex;flex:none;border:1px solid var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.lang a{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;padding:8px 13px;text-decoration:none;color:var(--accent);background:var(--accent-soft)}
+.lang a[aria-current]{background:var(--accent);color:var(--bg)}
+.lang a:not([aria-current]):hover{background:var(--accent);color:var(--bg)}
+.btn{transition:filter .15s,border-color .15s,color .15s}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:var(--surface);border-color:var(--muted)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent);filter:none}
+p a,.where a{display:inline-block;padding:1px 8px;border:1px solid var(--accent);background:var(--accent-soft);text-decoration:none;line-height:1.5}
+p a:hover,.where a:hover{background:var(--accent);color:var(--bg)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 @media (max-width:900px){
   .hero{grid-template-columns:1fr}
@@ -142,7 +161,9 @@ footer .contact a{color:var(--ink)}
   .posts{grid-template-columns:repeat(2,minmax(0,1fr))}
   .steps{grid-template-columns:1fr}
   .offer{grid-template-columns:1fr}
-  .top nav{display:none}
+  .top{flex-wrap:wrap;padding-block:12px;gap:10px}
+  .top nav{order:3;width:100%;flex-wrap:nowrap;overflow-x:auto;gap:8px;padding-bottom:2px}
+  .top nav a{white-space:nowrap}
 }
 @media (max-width:480px){
   .item{grid-template-columns:1fr}
@@ -154,10 +175,13 @@ footer .contact a{color:var(--ink)}
 <div class="wrap">
 
   <div class="top">
-    <span class="label">Tarik Ed-Darham · AI video &amp; social media</span>
+    <span class="label brand">Tarik Ed-Darham · AI video &amp; social media</span>
     <nav aria-label="Sections">
       <a href="#work">Work</a><a href="#social">Social</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a>
     </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <a href="index.html" hreflang="en" lang="en" aria-current="page">EN</a><a href="pl.html" hreflang="pl" lang="pl">PL · Polski</a>
+    </div>
   </div>
 
   <div class="hero">
@@ -367,12 +391,12 @@ footer .contact a{color:var(--ink)}
 
   <footer id="contact">
     <p class="big">Ads that look real and <span>stop the scroll.</span></p>
-    <p class="contact">
-      <a href="mailto:tarikderhem@gmail.com">tarikderhem@gmail.com</a><br>
-      <a href="tel:+48600744068">+48 600 744 068</a><br>
-      <a href="https://www.linkedin.com/in/tarik-derhem-b24890219/" target="_blank" rel="noopener">LinkedIn →</a><br>
+    <div class="contact">
+      <a class="btn" href="mailto:tarikderhem@gmail.com">✉ tarikderhem@gmail.com</a>
+      <a class="btn ghost" href="tel:+48600744068">☎ +48 600 744 068</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/tarik-derhem-b24890219/" target="_blank" rel="noopener">LinkedIn →</a>
       <span class="label">Wrocław, Poland · remote, any time zone</span>
-    </p>
+    </div>
   </footer>
 
 </div>
