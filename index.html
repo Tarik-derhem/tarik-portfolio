@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Tarik Ed-Darham, AI video creator in Wrocław. Realistic AI humans, product and fashion ads for Meta, TikTok and Reels.">
-<title>Tarik · AI Video Portfolio</title>
-<meta property="og:title" content="Tarik · AI Video Creator">
-<meta property="og:description" content="Realistic AI humans, UGC and product ads for Meta, TikTok and Reels.">
+<meta name="description" content="Tarik Ed-Darham, AI video creator and social media manager in Wrocław. AI ads, UGC, reels and social media posts for Meta, TikTok and Instagram.">
+<title>Tarik · AI Video &amp; Social Media Portfolio</title>
+<meta property="og:title" content="Tarik · AI Video &amp; Social Media">
+<meta property="og:description" content="AI ads, UGC, reels and social media posts. Open to social media management roles in Wrocław and remote.">
 <meta property="og:image" content="https://tarik-derhem.vercel.app/kitchen.jpg">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0E0F11">
@@ -82,6 +82,16 @@ section > header p{color:var(--muted);font-size:15px;max-width:26ch}
 .ugc{display:grid;grid-template-columns:repeat(2,minmax(0,240px));gap:20px}
 .ugc .note{grid-column:1/-1;color:var(--muted);font-size:15px;max-width:60ch}
 
+/* Open-to-work line */
+.open{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:9px 14px;border:1px solid var(--accent);background:var(--accent-soft);font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.open::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+
+/* Social media design */
+.posts{display:grid;grid-template-columns:repeat(2,minmax(0,300px));gap:20px}
+.posts figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:10px}
+.posts img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border:1px solid var(--line)}
+.posts .note{grid-column:1/-1;color:var(--muted);font-size:15px;max-width:60ch}
+
 /* Services */
 .offer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .svc{background:var(--surface);border:1px solid var(--line);padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0}
@@ -129,6 +139,7 @@ footer .contact a{color:var(--ink)}
   .reel{grid-template-columns:1fr;gap:36px}
   .frame .shot{max-width:340px}
   .ugc{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .posts{grid-template-columns:repeat(2,minmax(0,1fr))}
   .steps{grid-template-columns:1fr}
   .offer{grid-template-columns:1fr}
   .top nav{display:none}
@@ -143,17 +154,18 @@ footer .contact a{color:var(--ink)}
 <div class="wrap">
 
   <div class="top">
-    <span class="label">Tarik Ed-Darham · AI video</span>
+    <span class="label">Tarik Ed-Darham · AI video &amp; social media</span>
     <nav aria-label="Sections">
-      <a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a>
+      <a href="#work">Work</a><a href="#social">Social</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a>
     </nav>
   </div>
 
   <div class="hero">
     <div>
-      <div class="label">AI Video Portfolio · 2026</div>
+      <div class="label">AI Video &amp; Social Media Portfolio · 2026</div>
       <h1 class="name">Tarik</h1>
-      <p class="role">AI video creator. <em>Realistic AI humans</em>, UGC and product ads that stop the scroll.</p>
+      <p class="role">AI video creator and <em>social media manager</em>. Reels, UGC, posts and ads that stop the scroll.</p>
+      <p class="open">Open to social media management roles · Wrocław &amp; remote</p>
       <div class="meta">
         <span>Wrocław, Poland · remote</span>
         <span>Meta · TikTok · Reels</span>
@@ -266,14 +278,35 @@ footer .contact a{color:var(--ink)}
     </div>
   </section>
 
+  <section id="social">
+    <header>
+      <span class="label">Social media</span>
+      <h2>Post design</h2>
+      <p>Instagram posts I designed for AIESEC in Agadir.</p>
+    </header>
+    <div class="posts">
+      <figure>
+        <img src="aiesec1.jpg" alt="Instagram post: OC Recruitment Team announcement, purple collage with Moroccan landmarks" width="640" height="640" loading="lazy">
+        <span class="label">Recruitment team announcement · 150+ likes</span>
+      </figure>
+      <figure>
+        <img src="aiesec2.jpg" alt="Instagram post: member testimonial quote card with portrait" width="640" height="640" loading="lazy">
+        <span class="label">Member story series · quote card</span>
+      </figure>
+      <p class="note">As Marketing Team Leader at AIESEC in Agadir, I planned and designed the chapter's Instagram in Canva: announcements, recruitment campaigns and member story series, with a consistent visual style. See the account: <a href="https://www.instagram.com/gadirians/" target="_blank" rel="noopener">@gadirians</a>.</p>
+    </div>
+  </section>
+
   <section id="services">
     <header>
       <span class="label">What I deliver</span>
       <h2>Services</h2>
-      <p>Built for DTC and e-commerce brands that need fresh creatives every week.</p>
+      <p>For brands that need fresh content and a steady social presence every week.</p>
     </header>
     <div>
       <div class="offer">
+        <article class="svc"><h3>Social media management</h3><p>Content calendar, posting, captions and community replies across Instagram, TikTok and Facebook, with monthly stats to see what works.</p><span class="for">Instagram · TikTok · Facebook</span></article>
+        <article class="svc"><h3>Post &amp; carousel design</h3><p>On-brand posts, carousels and stories designed in Canva, from announcements to campaign series.</p><span class="for">Canva · brand consistency</span></article>
         <article class="svc"><h3>AI UGC &amp; testimonial ads</h3><p>Realistic creators talking to camera with natural lip-sync, in any language. Hook, problem, product, result, call to action.</p><span class="for">Beauty · skincare · wellness</span></article>
         <article class="svc"><h3>Cinematic product spots</h3><p>Light, texture and slow camera moves that make a product feel premium, from one packshot.</p><span class="for">Jewelry · home décor · cosmetics</span></article>
         <article class="svc"><h3>Fashion &amp; lookbooks</h3><p>One consistent character across outfits and angles, cut fast for Reels and TikTok.</p><span class="for">Apparel · streetwear · accessories</span></article>
@@ -326,7 +359,7 @@ footer .contact a{color:var(--ink)}
     </header>
     <div class="list">
       <div class="item"><h3>Freelance AI Video Creator</h3><span class="when">Freelance</span><p class="where">Luxury villas, Agadir &amp; Taghazout · UGC ads for skincare brands</p></div>
-      <div class="item"><h3>Marketing Team Leader</h3><span class="when">Volunteer</span><p class="where">AIESEC in Agadir · <a href="https://www.instagram.com/gadirians/" target="_blank" rel="noopener">@gadirians</a></p></div>
+      <div class="item"><h3>Marketing Team Leader</h3><span class="when">Volunteer</span><p class="where">AIESEC in Agadir · Instagram content &amp; post design · <a href="https://www.instagram.com/gadirians/" target="_blank" rel="noopener">@gadirians</a></p></div>
       <div class="item"><h3>Entertainer, DJ &amp; Dancer</h3><span class="when">Performance</span><p class="where">RIU Hotels and events · years in front of international audiences</p></div>
       <div class="item"><h3>MA in Communication Management</h3><span class="when">2026 – now</span><p class="where">University of Wrocław · BA in English Linguistics, Ibn Zohr University</p></div>
     </div>
